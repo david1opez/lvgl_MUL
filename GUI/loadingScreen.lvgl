@@ -1,0 +1,8 @@
+props = {
+    int percentage = 0;
+}
+
+<Screen ...props>
+</Screen>
+
+export this as "LoadingScreen"

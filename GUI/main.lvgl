@@ -1,0 +1,26 @@
+from "./loadingScreen.lvgl" import "LoadingScreen"
+from "./autonSelector.lvgl" import "AutonSelector"
+from "./odometry.lvgl" import "Odometry"
+from "./stats.lvgl" import "Stats"
+
+int(0-100) loadingPercentage = 0
+
+string currentTab("autonSelector" | "odometry" | "stats") = "autonSelector"
+
+<Screen>
+    if(loading < 100) {
+        <LoadingScreen percentage={loadingPercentage}/>
+    } else {
+        if(currentTab == "autonSelector") {
+            <AutonSelector/>
+        }
+        else if(currentTab == "odometry") {
+            <Odometry/>
+        }
+        else if(currentTab == "stats") {
+            <Stats/>
+        }
+    }
+</Screen>
+
+export this as default in "./default.cpp" as "GUI_test"
