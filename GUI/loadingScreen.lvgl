@@ -1,8 +1,11 @@
 props = {
-    int percentage = 0;
+    int(0-100) percentage = 0;
+    global bool showOnStart = true;
 }
 
 <Screen ...props>
+    props.percentage = 100;
+    props.showOnStart = true;
 </Screen>
 
-export this as "LoadingScreen"
+export
